@@ -1,0 +1,30 @@
+.container{
+    width:100%;
+    text-align: center;
+}
+ul{
+    width:100%;
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+ul li{
+    font-size: .8rem;
+    list-style: none;
+    text-decoration: none;
+    width: 25%;
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-shadow: 0px 10px 8px -12px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 10px 8px -12px rgb(0 0 0 / 75%);
+    box-shadow: 0px 10px 8px -12px rgb(0 0 0 / 75%);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 25px 10px;
+    min-height: 35px;
+}
