@@ -23,11 +23,11 @@ function DataFetching() {
       setData(prevState => {return [gameName,...prevState]})
     });
 
-      const output = displayName.map((data) => {
-        return (
-          <div>{data}</div>
-        )
-      })
+      // const output = displayName.map((data) => {
+      //   return (
+      //     <div>{data}</div>
+      //   )
+      // })
      
     })
   }
