@@ -48,6 +48,23 @@ function DataFetching() {
     <div className="container">
          <input type="text" value={filter} onChange={filterHandler}/>
       <ul>
+      {/* {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> (console.log(name,index)))} */}
+
+
+
+     {data.filter(e => e.includes(filter) || filter === '').map((name)=> 
+     
+       console.log(name.split(' ').map((e)=>e.indexOf(filter)))
+
+
+    //  name.split(' ').map(e=>e.includes(filter)).includes(true))
+
+      
+
+
+
+     )}
+
         {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> ( <li key={index}>{name}</li>))}
         
       </ul>
