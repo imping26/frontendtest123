@@ -37,35 +37,47 @@ function DataFetching() {
   },[])
 
 
+  const filterGame = [];
 
-  const filterHandler = e => {
-    console.log(e.target.value);
-    setFilter(e.target.value);
-   }
+  for(var i =0 ;i < data.length; i ++){
+    var currentWord = data[i];
+    if(currentWord.indexOf(filter) == 0){
+      filterGame.push(data[i]);
+    }
+    if(currentWord.indexOf(filter) > 0){
+        if(currentWord.indexOf(' ') != -1 && currentWord.indexOf(' ') < currentWord.indexOf(filter)){
+          filterGame.push(data[i]);
+        }
+        else{
+            console.log("Incorrect");
+        }
+    }
+    // console.log(array[i]);
+    }
+
+    // console.log(filterGame);
+
+      const filterHandler = e => {
+        // console.log(e.target.value);
+        setFilter(e.target.value);
+      }
 
   return (
     
     <div className="container">
          <input type="text" value={filter} onChange={filterHandler}/>
       <ul>
-      {/* {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> (console.log(name,index)))} */}
+    {/* {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> (console.log(name,index)))} */}
 
 
 
-     {data.filter(e => e.includes(filter) || filter === '').map((name)=> 
+     {/* {data.filter(e => e.includes(filter) || filter === '').map((name)=> 
      
-       console.log(name.split(' ').map((e)=>e.indexOf(filter)))
+     console.log(name.split(' ').map((e)=>e.indexOf(filter)))
 
-
-    //  name.split(' ').map(e=>e.includes(filter)).includes(true))
-
-      
-
-
-
-     )}
-
-        {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> ( <li key={index}>{name}</li>))}
+     )} */}
+      {filterGame.map((name,index)=> ( <li key={index}>{name}</li>))}
+      {/* {data.filter(e => e.includes(filter) || filter === '').map((name,index)=> ( <li key={index}>{name}</li>))} */}
         
       </ul>
     </div>
